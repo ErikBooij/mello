@@ -1,0 +1,10 @@
+#!/bin/sh
+# control: recover-disk-space v1
+#
+# Deletes mello's recreatable files to recover disk space.
+# Restore with: python mello.py && pytest tests/ -v
+set -eu
+cd "$(dirname "$0")"
+recipes="${CONTROL_RECIPES:-$HOME/Library/Application Support/Control/Recipes}"
+
+"$recipes/python-caches"
